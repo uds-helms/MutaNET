@@ -1,18 +1,19 @@
 # import standard or third party modules
 import os
-import yaml
 import traceback
 from shutil import which
 from sys import platform
 from tkinter import messagebox
 
+import yaml
+
 # import own modules
-from log import ALog, NGSLog
+from source.log import ALog, NGSLog
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 """ HELPER FUNCTIONS """

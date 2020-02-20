@@ -1,27 +1,27 @@
 # import standard or third party modules
-import re
 import os
-import traceback
+import re
 import tkinter as tk
-from time import time
+import traceback
 from shutil import which
+from subprocess import Popen
+from time import time
 from tkinter import ttk, filedialog, messagebox, font
 
+from source.configuration import cfg, gui, adjust_dir_path, adjust_file_path, find_exe
+from source.converter import MutationVcfMerger, UniProtConverter, PatricConverter, RegulonDBConverter
+from source.database import Database
+from source.log import ALog
 # import own modules
-from stats import Stats
-from log import ALog
-from ngs import NGSPipeline
-from database import Database
-from subprocess import Popen
-from tools import check_dir, setup_directory, clean_directory
-from configuration import cfg, gui, adjust_dir_path, adjust_file_path, find_exe
-from converter import MutationVcfMerger, UniProtConverter, PatricConverter, RegulonDBConverter
+from source.stats import Stats
+from source.tools import check_dir, setup_directory, clean_directory
 
+from source.ngs import NGSPipeline
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 def out_warn(out_dir):

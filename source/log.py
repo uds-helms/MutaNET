@@ -4,7 +4,7 @@ from collections import defaultdict
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 class LogSet:

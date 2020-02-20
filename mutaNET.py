@@ -1,12 +1,12 @@
 import os
-import warnings
 import tkinter as tk
-
+import warnings
+from source import gui
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 """
 Main function that creates the graphical user interface (GUI), which controls the program flow.
@@ -17,7 +17,7 @@ warnings.filterwarnings('ignore')
 # extract and set the proper working directory
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-import gui
+
 # build and run the GUI
 root = tk.Tk()
 app_gui = gui.GUI(root)

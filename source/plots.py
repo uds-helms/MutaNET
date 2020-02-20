@@ -1,24 +1,26 @@
 # import standard or third party modules
-import fpdf
 import math
-import numpy as np
 import os.path as op
-import matplotlib as mpl
-from itertools import chain
 from datetime import datetime
+from itertools import chain
+
+import fpdf
 # set up matplotlib
 import matplotlib
+import matplotlib as mpl
+import numpy as np
+
 matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 
 # import own modules
-from configuration import cfg
+from source.configuration import cfg
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 class Plot:

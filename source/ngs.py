@@ -1,21 +1,22 @@
 # import standard or third party modules
 import os
 import shutil
-from time import time
-from shlex import quote
 import subprocess as sp
 from collections import defaultdict
-from converter import MutationVcfMerger
+from shlex import quote
+from time import time
 
+from source.converter import MutationVcfMerger
 # import own modules
-from log import NGSLog
-from configuration import cfg, adjust_dir_path, adjust_file_path
-from tools import get_file_name, setup_directory, clean_directory
+from source.log import NGSLog
+from source.tools import get_file_name, setup_directory, clean_directory
+
+from source.configuration import cfg, adjust_dir_path, adjust_file_path
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 class NGSPipeline:

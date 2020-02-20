@@ -2,13 +2,14 @@
 from collections import defaultdict
 
 # import own modules
-from tools import is_dna_sequence
-from configuration import cfg
+from source.tools import is_dna_sequence
+
+from source.configuration import cfg
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 class GeneRegion:

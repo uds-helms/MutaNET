@@ -1,16 +1,16 @@
 # import standard or third party modules
 import os
+from itertools import filterfalse
 from math import log
 from tkinter import messagebox
-from itertools import filterfalse
 
 # import own modules
-from configuration import cfg, adjust_dir_path
+from source.configuration import cfg, adjust_dir_path
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 def check_dir(name, path, files=False):

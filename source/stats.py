@@ -1,15 +1,15 @@
 # import standard or third party modules
 import numpy as np
+from source.plots import BarPlot, CodingPlot, TfbsPlot, MdPlot, Result
 from scipy.stats import ranksums
 
 # import own modules
-from configuration import cfg
-from plots import BarPlot, CodingPlot, TfbsPlot, MdPlot, Result
+from source.configuration import cfg
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 class Stats:

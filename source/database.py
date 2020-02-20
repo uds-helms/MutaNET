@@ -1,26 +1,27 @@
 # import standard or third party modules
-import re
 import os
+import re
 import sqlite3
+from collections import defaultdict
 from copy import deepcopy
 from csv import DictReader
 from itertools import islice
-from tkinter import messagebox
 from random import randint, choice
-from collections import defaultdict
+from tkinter import messagebox
 from typing import List, Set
 
-# import own modules
-from gene import Gene
-from configuration import cfg, gui
-from mutation import Mutation
-from tools import complement_strand, translate, SubstitutionMatrix, Pwm, Edge, tsv_start, check_tsv_fieldnames, \
+from source.configuration import cfg, gui
+from source.mutation import Mutation
+from source.tools import complement_strand, translate, SubstitutionMatrix, Pwm, Edge, tsv_start, check_tsv_fieldnames, \
     is_dna_sequence
+
+# import own modules
+from source.gene import Gene
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
 __license__ = 'GPL V3'
-__version__ = '1.0'
+__version__ = '2.0'
 
 
 class Database:
