@@ -183,7 +183,7 @@ class Database:
         Reads and processes the .tsv file with gene information.
         """
         # open the .tsv file for reading and load it into a dictionary reader
-        with open(cfg.user.ai_gene, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_gene, 'r') as file:
             reader = DictReader(tsv_start(file), delimiter='\t')
             # check if all required field names are in the .tsv file
             field_names = {cfg.gene.lt, cfg.gene.strand, cfg.gene.start, cfg.gene.end, cfg.gene.dna,
@@ -369,7 +369,7 @@ class Database:
         Reads and processes the .tsv file with mutation information.
         """
         # open the .tsv file for reading and load it into a dictionary reader
-        with open(cfg.user.ai_mut, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_mut, 'r') as file:
             reader = DictReader(tsv_start(file), delimiter='\t')
 
             # check if all required field names are in the .tsv file
@@ -411,7 +411,7 @@ class Database:
         Reads and processes the .tsv file with the genes of interest.
         """
         # open the .tsv file for reading and load it into a dictionary reader
-        with open(cfg.user.ai_int, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_int, 'r') as file:
             reader = DictReader(tsv_start(file), delimiter='\t')
 
             # check if all required field names are in the .tsv file
@@ -451,7 +451,7 @@ class Database:
         Reads and processes the .tsv file with regulatory information.
         """
         # open the .tsv file for reading and load it into a dictionary reader
-        with open(cfg.user.ai_reg, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_reg, 'r') as file:
             reader = DictReader(tsv_start(file), delimiter='\t')
 
             # check if all required field names are in the .tsv file
@@ -478,7 +478,7 @@ class Database:
         Reads and processes the .tsv file with transcription factor binding site information.
         """
         # open the .tsv file for reading and load it into a dictionary reader
-        with open(cfg.user.ai_prot, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_prot, 'r') as file:
             reader = DictReader(tsv_start(file), delimiter='\t')
 
             # check if all required field names are in the .tsv file
@@ -503,7 +503,7 @@ class Database:
         Reads and processes the .tsv file with transcription factor binding site information.
         """
         # open the .tsv file for reading and load it into a dictionary reader
-        with open(cfg.user.ai_tfbs, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_tfbs, 'r') as file:
             reader = DictReader(tsv_start(file), delimiter='\t')
 
             # check if all required field names are in the .tsv file
@@ -676,7 +676,7 @@ class Database:
         """
         Reads and processes the .fasta file with the transcription factor sequence alignments.
         """
-        with open(cfg.user.ai_msa, 'r', encoding='latin-1') as file:
+        with open(cfg.user.ai_msa, 'r') as file:
             lt = ''
             name = ''
             alignment = []
@@ -1229,7 +1229,7 @@ class Database:
         """
         Writes the GRN and the sub-network of interest into two .gml files.
         """
-        with open(cfg.op.grn_full, 'w', encoding='latin-1') as file, open(cfg.op.grn_int, 'w') as int_file:
+        with open(cfg.op.grn_full, 'w') as file, open(cfg.op.grn_int, 'w') as int_file:
             # write the graph specifications for both networks
             file.write('graph [\n')
             file.write('\tdirected 1\n')
