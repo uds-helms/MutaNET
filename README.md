@@ -27,3 +27,8 @@ python source_folder_path/mutaNET.py
 ### Example Data Sets
 When starting MutaNET for the first time, the file paths for small example data sets for the NGSpipeline, mutation analysis and file converters are already loaded to allow quick testing.  Keep in mind that for the NGS pipeline extra programs need to be installed. The  settings  for  the  example  data  can  be  restored  any  time  by  clicking  on `Settings → Restore default settings`.  The data sets can be found in the `example_data` folder, if you want to have a look at the file formats.
 
+**NGS Pipeline:** You need to extract `S11_R1.fastq`and `S11_R2.fastq` from `S11_R1.zip` and `S11_R2.zip` in `example_data/NGS/reads` before running the NGS pipeline with the example data.
+
+## Change Log
+### Version 2.0
+- 
