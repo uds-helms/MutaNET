@@ -1,0 +1,23 @@
+locus tag	gene name	of interest	chromosome	regulated genes	regulators	mutation	ID	genome position	protein position	type	location(s)	TFBS score	protein effect	amino acid	substitution score	description
+lt16	gn16	MDR efflux pump	-		lt6 (gn6) [A]	T --> A	23	2997	0	transversion	promoter	-	-	-	-	-
+					lt27 (gn27) [?]	G --> C	24	3006	3	transversion	coding	-	missense	D --> H	0.51613	t16 [d16]
+						T --> A	25	3009	0	transversion	coding	-	readthrough	stop --> K	0.20551	-
+lt17	gn16	MDR efflux pump	-		lt6 (gn6) [A]	G --> C	28	3186	0	transversion	promoter	-	-	-	-	-
+					lt27 (gn27) [?]	T --> G	29	3210	4	transversion	coding	-	nonsense	L --> stop	0.19561	-
+						C --> T	30	3216	6	transition	coding	-	missense	P --> L	0.41935	-
+lt26	gn26	antibiotic	-													
+lt6	gn6	MDR efflux regulator	-	lt16 (gn16) [A]	lt20 (gn20) [?]	T --> C	1	1011	11	transition	coding	-	missense	M --> V	0.54286	-
+				lt17 (gn16) [A]		A --> T	2	1013	10	transversion	coding	-	missense	L --> H	0.46667	mutation [d6_3]
+				lt8 [R]		G --> C	3	1031	4	transversion	coding	-	missense	S --> C	0.56667	mutagen [d6_1]
+						G --> A	9	1446	0	transition	TFBS, promoter	0.17872	-	-	-	-
+						G --> A	9	1446	0	transition	TFBS, promoter	0.17872	-	-	-	-
+lt8	-	antibiotic	-		lt6 (gn6) [R]	C --> A	7	1417	9	transversion	coding	-	nonsense	E --> stop	0.57437	-
+					lt20 (gn20) [?]	T --> A	8	1428	5	transversion	coding	-	missense	K --> I	0.46667	-
+						G --> A	9	1446	0	transition	TFBS, promoter	0.17872	-	-	-	-
+						G --> A	9	1446	0	transition	TFBS, promoter	0.17872	-	-	-	-
+lt20	gn20	-	-	lt8 [?]		C --> A	37	3798	0	transversion	promoter	-	-	-	-	-
+				lt6 (gn6) [?]												
+lt27	gn27	-	-	lt17 (gn16) [?]		G --> T	51	5177	0	transversion	promoter	-	-	-	-	-
+				lt16 (gn16) [?]		T --> C	52	5194	0	transition	promoter	-	-	-	-	-
+						T --> A	53	5212	5	transversion	coding	-	missense	S --> T	0.70000	-
+						T --> C	54	5215	0	transition	coding	-	readthrough	stop --> R	0.62302	-

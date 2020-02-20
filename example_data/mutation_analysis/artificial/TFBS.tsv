@@ -1,0 +1,7 @@
+TF locus tag	TF gene name	TFBS locus tag	TFBS gene name	absolute start	absolute end	relative start	sequence
+	gn20	lt7				-219	TAGTTCG
+	gn6		gn15	2850	2856		CGATGTG
+lt27			gn16	2950	2954		GAAGT
+lt25		lt3				-5	TTCAGGGG
+lt27			gn16	2951	2955		CAAGT
+lt27			gn16	2950	2954		GAAGT

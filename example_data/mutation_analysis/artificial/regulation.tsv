@@ -1,0 +1,9 @@
+regulator (locus tag)	regulator (gene name)	regulated gene (locus tag)	regulated gene (gene name)	regulation
+lt6			gn16	+
+lt6		lt8		-
+lt14		lt13		+-
+lt29		lt4	gn4	
+lt24		lt24		repressor
+lt24		lt3		?
+lt50		lt3		activator
+lt24		lt50		effector

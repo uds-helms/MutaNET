@@ -1,0 +1,83 @@
+ID   FMT_STAA8               Reviewed;         311 AA.
+AC   Q2FZ68;
+DT   15-JAN-2008, integrated into UniProtKB/Swiss-Prot.
+DT   21-MAR-2006, sequence version 1.
+DT   15-MAR-2017, entry version 72.
+DE   RecName: Full=Methionyl-tRNA formyltransferase {ECO:0000255|HAMAP-Rule:MF_00182};
+DE            EC=2.1.2.9 {ECO:0000255|HAMAP-Rule:MF_00182};
+GN   Name=fmt {ECO:0000255|HAMAP-Rule:MF_00182};
+GN   OrderedLocusNames=SAOUHSC_01183;
+OS   Staphylococcus aureus (strain NCTC 8325).
+OC   Bacteria; Firmicutes; Bacilli; Bacillales; Staphylococcaceae;
+OC   Staphylococcus.
+OX   NCBI_TaxID=93061;
+RN   [1]
+RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
+RC   STRAIN=NCTC 8325;
+RA   Gillaspy A.F., Worrell V., Orvis J., Roe B.A., Dyer D.W.,
+RA   Iandolo J.J.;
+RT   "The Staphylococcus aureus NCTC 8325 genome.";
+RL   (In) Fischetti V., Novick R., Ferretti J., Portnoy D., Rood J. (eds.);
+RL   Gram positive pathogens, 2nd edition, pp.381-412, ASM Press,
+RL   Washington D.C. (2006).
+CC   -!- FUNCTION: Modifies the free amino group of the aminoacyl moiety of
+CC       methionyl-tRNA(fMet). The formyl group appears to play a dual role
+CC       in the initiator identity of N-formylmethionyl-tRNA by: (I)
+CC       promoting its recognition by IF2 and (II) impairing its binding to
+CC       EFTu-GTP. {ECO:0000255|HAMAP-Rule:MF_00182}.
+CC   -!- CATALYTIC ACTIVITY: 10-formyltetrahydrofolate + L-methionyl-
+CC       tRNA(fMet) = tetrahydrofolate + N-formylmethionyl-tRNA(fMet).
+CC       {ECO:0000255|HAMAP-Rule:MF_00182}.
+CC   -!- SIMILARITY: Belongs to the Fmt family. {ECO:0000255|HAMAP-
+CC       Rule:MF_00182}.
+CC   -----------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution-NoDerivs License
+CC   -----------------------------------------------------------------------
+DR   EMBL; CP000253; ABD30290.1; -; Genomic_DNA.
+DR   RefSeq; WP_000161299.1; NC_007795.1.
+DR   RefSeq; YP_499722.1; NC_007795.1.
+DR   ProteinModelPortal; Q2FZ68; -.
+DR   SMR; Q2FZ68; -.
+DR   STRING; 93061.SAOUHSC_01183; -.
+DR   EnsemblBacteria; ABD30290; ABD30290; SAOUHSC_01183.
+DR   GeneID; 28381227; -.
+DR   GeneID; 3919316; -.
+DR   KEGG; sao:SAOUHSC_01183; -.
+DR   PATRIC; 19579855; VBIStaAur99865_1086.
+DR   eggNOG; ENOG4105CAE; Bacteria.
+DR   eggNOG; COG0223; LUCA.
+DR   HOGENOM; HOG000261177; -.
+DR   KO; K00604; -.
+DR   OMA; GCINSHA; -.
+DR   Proteomes; UP000008816; Chromosome.
+DR   GO; GO:0004479; F:methionyl-tRNA formyltransferase activity; IEA:UniProtKB-EC.
+DR   Gene3D; 3.10.25.10; -; 1.
+DR   Gene3D; 3.40.50.170; -; 1.
+DR   HAMAP; MF_00182; Formyl_trans; 1.
+DR   InterPro; IPR005794; Fmt.
+DR   InterPro; IPR005793; Formyl_trans_C.
+DR   InterPro; IPR002376; Formyl_transf_N.
+DR   InterPro; IPR011034; Formyl_transferase_C-like.
+DR   InterPro; IPR001555; GART_AS.
+DR   Pfam; PF02911; Formyl_trans_C; 1.
+DR   Pfam; PF00551; Formyl_trans_N; 1.
+DR   SUPFAM; SSF50486; SSF50486; 1.
+DR   SUPFAM; SSF53328; SSF53328; 1.
+DR   TIGRFAMs; TIGR00460; fmt; 1.
+DR   PROSITE; PS00373; GART; 1.
+PE   3: Inferred from homology;
+KW   Complete proteome; Protein biosynthesis; Reference proteome;
+KW   Transferase.
+FT   CHAIN         1    311       Methionyl-tRNA formyltransferase.
+FT                                /FTId=PRO_1000020173.
+FT   REGION      109    112       Tetrahydrofolate (THF) binding.
+FT                                {ECO:0000255|HAMAP-Rule:MF_00182}.
+SQ   SEQUENCE   311 AA;  34211 MW;  FC45A768EA61D5CA CRC64;
+     MTKIIFMGTP DFSTTVLEML IAEHDVIAVV TQPDRPVGRK RVMTPPPVKK VAMKYDLPVY
+     QPEKLSGSEE LEQLLQLDVD LIVTAAFGQL LPESLLALPN LGAINVHASL LPKYRGGAPI
+     HQAIIDGEQE TGITIMYMVK KLDAGNIISQ QAIKIEENDN VGTMHDKLSV LGADLLKETL
+     PSIIEGTNES VPQDDTQATF ASNIRREDER ISWNKPGRQV FNQIRGLSPW PVAYTTMDDT
+     NLKIYDAELV ETNKINEPGT IIETTKKAII VATNDNEAVA IKDMQLAGKK RMLAANYLSG
+     AQNTLVGKKL I
+//

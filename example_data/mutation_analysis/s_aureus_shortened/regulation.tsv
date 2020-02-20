@@ -1,0 +1,6 @@
+regulator (locus tag)	regulator (gene name)	regulated gene (locus tag)	regulated gene (gene name)	regulation
+	arlS		norA	effector
+	cvfA		sarZ	activator
+	czrA		czrA	repressor
+SAOUHSC_01850		SAOUHSC_00008		?
+	lexA		parE	repressor

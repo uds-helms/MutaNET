@@ -1,0 +1,3 @@
+operon_name1	234	3324	forward	3	gene1,gene2,gene3	evidence1	Weak
+operon_name2	4355	56567	forward	2	gene4,gene5	evidence2	Strong
+operon_name3	54647	768675	reverse	1	gene6	evidence3	Confirmed

@@ -1,0 +1,3 @@
+gene1	operon_name1[gene1, gene2, gene3]	+-	evidence1	Weak	
+gene1	operon_name2[gene4, gene5]	-	evidence2	Strong	
+gene5	operon_name3[gene6]	?	evidence3	Weak	

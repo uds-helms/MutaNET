@@ -1,0 +1,34 @@
+Transcription Factor ID: identifier1
+Transcription Factor Name: gene1
+Total of binding sites: 4
+PSSM size: 11
+
+AAGCAAAGCGC
+AATTAAAGCGC
+ACGCAAAAACC
+AATGTTTTAGC
+
+a	|	4	3	0	0	3	3	3	1	2	0	0
+c	|	0	1	0	2	0	0	0	0	2	1	4
+g	|	0	0	2	1	0	0	0	2	0	3	0
+t	|	0	0	2	1	1	1	1	1	0	0	0
+
+
+
+Transcription Factor ID: identifier5
+Transcription Factor Name: gene5
+Total of binding sites: 7
+PSSM size: 13
+
+ATTATGAAACAAG
+TCATTGCAACAAT
+GCAATGAAACGCG
+GCGGTGAAACATT
+TGCCTGAAACGTT
+TTTGTGAAACCGG
+TTTGTGAAACCGG
+
+a	|	1	0	2	2	0	0	6	7	7	0	3	2	0
+c	|	0	3	1	1	0	0	1	0	0	7	2	1	0
+g	|	2	1	1	3	0	7	0	0	0	0	2	2	4
+t	|	4	3	3	1	7	0	0	0	0	0	0	2	3

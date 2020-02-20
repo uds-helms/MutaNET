@@ -1,0 +1,4 @@
+locus tag	gene name	start	end	type	description
+SAOUHSC_02536	moaA	1	340	chain	Cyclic pyranopterin monophosphate synthase
+SAOUHSC_02536	moaA	266	268	region	GTP binding
+SAOUHSC_02669	sarZ	14	14	mutagen	F->A: Reduced DNA binding activity, hemolysin production and virulence in silkworm-infection model

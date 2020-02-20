@@ -1,0 +1,1 @@
+Instructions on how to obtain full S. aureus data sets can be found in the user manual.
