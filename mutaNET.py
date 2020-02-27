@@ -1,4 +1,5 @@
 import os
+import sys
 import tkinter as tk
 import warnings
 from source import gui
@@ -11,15 +12,14 @@ __version__ = '2.0'
 """
 Main function that creates the graphical user interface (GUI), which controls the program flow.
 """
-# don't show warnings in std-out
-warnings.filterwarnings('ignore')
+if __name__ == '__main__':
+    # don't show warnings in std-out
+    warnings.filterwarnings('ignore')
 
-# extract and set the proper working directory
-os.chdir(os.path.dirname(os.path.abspath(__file__)))
+    # extract and set the proper working directory
+    os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-
-# build and run the GUI
-root = tk.Tk()
-app_gui = gui.GUI(root)
-root.mainloop()
-
+    # build and run the GUI
+    root = tk.Tk()
+    app_gui = gui.GUI(root)
+    root.mainloop()

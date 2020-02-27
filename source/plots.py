@@ -10,7 +10,7 @@ import matplotlib
 import matplotlib as mpl
 import numpy as np
 
-matplotlib.use('TkAgg')
+matplotlib.use('tkagg')
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 

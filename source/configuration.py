@@ -1,11 +1,10 @@
 # import standard or third party modules
 import os
+import yaml
 import traceback
 from shutil import which
 from sys import platform
 from tkinter import messagebox
-
-import yaml
 
 # import own modules
 from source.log import ALog, NGSLog
@@ -58,10 +57,10 @@ def adjust_dir_path(path):
         return path
 
     path = path.replace('\\', '/')
-    
+
     if path[-1] != '/':
         path += '/'
-        
+
     return path
 
 
@@ -158,7 +157,7 @@ class GuiKeys:
     ao_dir = 'Output directory (analysis)'          # type: str
     # buttons
     ar_run = 'Run (analysis)'
-                                           
+
     """ ANALYSIS - SETTINGS """
     as_title = 'Advanced Analysis Settings'             # type: str
     as_prom = 'Relative default promoter start'         # type: str
@@ -171,7 +170,7 @@ class GuiKeys:
     as_int_short = 'interesting name (short)'           # type: str
     as_not_int = 'not-interesting name'                 # type: str
     as_not_int_short = 'not-interesting name (short)'   # type: str
-                                           
+
     """ NGS - MAIN """
     # section and subsection headings
     nh_title = 'NGS Pipeline'           # type: str
@@ -181,7 +180,7 @@ class GuiKeys:
     no_dir = 'Output directory (NGS)'   # type: str
     # buttons
     nr_run = 'Run (NGS)'
-                                   
+
     """ NGS - SETTINGS """
     ns_title = 'Advanced NGS Pipeline Settings'     # type: str
     ne_var = 'VarScan executable'                   # type: str
@@ -192,7 +191,7 @@ class GuiKeys:
     nr_open = 'Open output directory (NGS)'         # type: str
     nr_clean = 'Clean output directory'             # type: str
     nr_del = 'Delete old output (NGS)'              # type: str
-  
+
     """ CONVERTER """
     # VCF merger
     pm_title = 'Mutation VCF Merger'                    # type: str
@@ -220,7 +219,7 @@ class GuiKeys:
     pr_gene_reg = 'regulondb gene regulation file'              # type: str
     pr_tf_reg = 'regulondb tf regulation file'                  # type: str
     pr_operon = 'regulondb operon file'                         # type: str
-    pr_tfbs = 'regulondb tfbs_result file'                             # type: str
+    pr_tfbs = 'regulondb tfbs_result file'                      # type: str
     pr_run = 'Run (regulondb converter)'                        # type: str
     pr_open = 'Open output directory (regulondb converter)'     # type: str
     pr_skip = 'Skip low quality'                                # type: str
@@ -283,7 +282,7 @@ class GeneTSV:
     pubmed = 'Pubmed'                           # type: str
     strand = 'strand'                           # type: str
     chromosome = 'chromosome'                   # type: str
-    
+
 
 class MutationTSV:
     """
@@ -293,7 +292,7 @@ class MutationTSV:
     ref = 'reference'       # type: str
     alt = 'alternative'     # type: str
     chrom = 'chromosome'    # type: str
-    
+
 
 class RegulationTSV:
     """
@@ -304,8 +303,8 @@ class RegulationTSV:
     name2 = 'regulated gene (gene name)'    # type: str
     lt2 = 'regulated gene (locus tag)'      # type: str
     desc = 'regulation'                     # type: str
-    
-    
+
+
 class InterestTSV:
     """
     Constants for the resistance.tsv format.
@@ -313,8 +312,8 @@ class InterestTSV:
     name = 'gene name'          # type: str
     lt = 'locus tag'            # type: str
     desc = 'sub-category'       # type: str
-    
-    
+
+
 class ProteinDomainTSV:
     """
     Constants for the protein domain.tsv format.
@@ -325,8 +324,8 @@ class ProteinDomainTSV:
     lt = 'locus tag'        # type: str
     type = 'type'           # type: str
     desc = 'description'    # type: str
-    
-    
+
+
 class TfbsTSV:
     """
     Constants for the TFBS.tsv format.
@@ -343,38 +342,38 @@ class TfbsTSV:
 
 class SupportedInput:
     # support resistance information
-    res_gen = ['ar', 'antibiotic resistance',                           # type: list
+    res_gen = ['ar', 'antibiotic resistance',
                'antibiotic-resistance', 'antibiotic resistant',
                'antibiotic-resistant', 'antibiotic',
-               'antimicrobial', 'resistance', 'resistant', 'res']
-    res_reg = ['regulator', 'reg', 'efflux regulator',                  # type: list
+               'antimicrobial', 'resistance', 'resistant', 'res']       # type: list
+    res_reg = ['regulator', 'reg', 'efflux regulator',
                'mdr regulator', 'mdr efflux regulator',
-               'mdre regulator']
-    res_pump = ['transporter', 'pump', 'mdr efflux transporter',        # type: list
+               'mdre regulator']                                        # type: list
+    res_pump = ['transporter', 'pump', 'mdr efflux transporter',
                 'mdr efflux pump', 'mdre transporter', 'mdre pump',
                 't', 'p', 'mdr pump', 'mdr transporter',
-                'efflux transporter', 'efflux pump']
+                'efflux transporter', 'efflux pump']                    # type: list
     # supported strand information
-    str_plus = ['+', 'p', 'plus', 'forward']                        # type: list
-    str_minus = ['-', 'm', 'minus', 'backward', 'reverse']          # type: list
+    str_plus = ['+', 'p', 'plus', 'forward']                            # type: list
+    str_minus = ['-', 'm', 'minus', 'backward', 'reverse']              # type: list
     # supported regulation information
-    reg_act = ['a', 'up-regulation', 'upregulation',            # type: list
+    reg_act = ['a', 'up-regulation', 'upregulation',
                'up regulation', 'up-regulator',
                'up regulator', 'upregulation', 'up',
                'u', Misc.activator.lower(), '+', 'plus',
-               'activator', 'activation']
-    reg_rep = ['r', 'down-regulation', 'downregulation',        # type: list
+               'activator', 'activation']                               # type: list
+    reg_rep = ['r', 'down-regulation', 'downregulation',
                'down regulation', 'down-regulator',
                'down regulator', 'downregulator',
                'down', 'd', Misc.repressor.lower(), '-',
-               'minus', 'repressor', 'repression']
-    reg_eff = ['p', 'tf', 'as_prom', 'promoter',                # type: list
+               'minus', 'repressor', 'repression']                      # type: list
+    reg_eff = ['p', 'tf', 'as_prom', 'promoter',
                'promotor', 'transcription factor',
                'transcription', 'e', 'effector',
                'transcription-factor', 't-factor',
                Misc.effector.lower(), '+-', '-+',
                'plusminus', 'minusplus', 'plus-minus',
-               'minus-plus']
+               'minus-plus']                                            # type: list
 
 
 """ ANALYSIS OUTPUT FORMATS """
@@ -534,7 +533,7 @@ class RunConfig:
     """
     def __init__(self, cfg_dict):
         self.cfg_dict = cfg_dict.copy()                                         # type: dict
-        
+
         # analysis
         self.a_coding = bool(cfg_dict['run coding region analysis'])            # type: bool
         self.a_tfbs = bool(cfg_dict['run TFBS analysis'])                       # type: bool
@@ -546,12 +545,12 @@ class RunConfig:
         self.a_del = bool(cfg_dict['delete old analysis output'])               # type: bool
 
         # NGS
-        self.n_open = bool(cfg_dict['open NGS output directory'])           # type: bool
-        self.n_clean = bool(cfg_dict['clean up NGS output directory'])      # type: bool
-        
+        self.n_open = bool(cfg_dict['open NGS output directory'])               # type: bool
+        self.n_clean = bool(cfg_dict['clean up NGS output directory'])          # type: bool
+
         # parser
-        self.p_open = bool(cfg_dict['open parser output directory'])        # type: bool
-        
+        self.p_open = bool(cfg_dict['open parser output directory'])            # type: bool
+
     def update_cfg_dict(self):
         """
         Updates and returns the configuration dictionary.
@@ -574,7 +573,7 @@ class RunConfig:
         self.cfg_dict['open parser output directory'] = bool(self.p_open)
 
         return self.cfg_dict
-    
+
 
 class UserConfig:
     """
@@ -602,7 +601,7 @@ class UserConfig:
         self.as_int_short = cfg_dict['Analysis']['genes of interest (name short)']          # type: str
         self.as_not_int = cfg_dict['Analysis']['other genes (name long)']                   # type: str
         self.as_not_int_short = cfg_dict['Analysis']['other genes (name short)']            # type: str
-        
+
         """ NGS """
         # input paths
         self.ni_reads = adjust_dir_path(cfg_dict['NGS']['reads directory'])                 # type: str
@@ -616,7 +615,7 @@ class UserConfig:
         # settings
         self.ns_qcut = int(cfg_dict['NGS']['quality control cut-off'])                      # type: int
         self.ns_pv = float(cfg_dict['NGS']['p-value'])                                      # type: float
-        
+
         """ PARSER """
         # UniProt
         self.pu_out = adjust_file_path(cfg_dict['UniProt']['output file'])                  # type: str
@@ -795,9 +794,9 @@ class GuiConfig:
         self.st_padx = tuple(cfg_dict['x-margins']['section title'])            # type: (int, int)
         self.sst_padx = tuple(cfg_dict['x-margins']['subsection title'])        # type: (int, int)
         # window borders
-        self.wl_padx = cfg_dict['x-margins']['window left']              # type: (int, int)
-        self.wr_padx = cfg_dict['x-margins']['window right']             # type: (int, int)
-        self.col_padx = cfg_dict['x-margins']['column']                  # type: (int, int)
+        self.wl_padx = cfg_dict['x-margins']['window left']                     # type: (int, int)
+        self.wr_padx = cfg_dict['x-margins']['window right']                    # type: (int, int)
+        self.col_padx = cfg_dict['x-margins']['column']                         # type: (int, int)
         # separators
         self.sp_padx = tuple(cfg_dict['x-margins']['separator'])                # type: (int, int)
         self.tss_padx = tuple(cfg_dict['x-margins']['text separator'])          # type: (int, int)
@@ -823,7 +822,7 @@ class GuiConfig:
         self.st_pady = tuple(cfg_dict['y-margins']['section title'])            # type: (int, int)
         self.sst_pady = tuple(cfg_dict['y-margins']['subsection title'])        # type: (int, int)
         # window borders
-        self.wb_pady = cfg_dict['y-margins']['window bottom']            # type: (int, int)
+        self.wb_pady = cfg_dict['y-margins']['window bottom']                   # type: (int, int)
         # separators
         self.sp_pady = tuple(cfg_dict['y-margins']['separator'])                # type: (int, int)
         self.tss_pady = tuple(cfg_dict['y-margins']['text separator'])          # type: (int, int)
@@ -843,7 +842,7 @@ class GuiConfig:
         self.ef_pady = tuple(cfg_dict['y-margins']['entry field text'])         # type: (int, int)
         # status box
         self.sf_pady = tuple(cfg_dict['y-margins']['status box frame'])         # type: (int, int)
-        
+
         """ CONSTANTS """
         self.key = GuiKeys                  # type: GuiKeys
         self.desc = self.descriptions()     # type: dict
@@ -1057,7 +1056,7 @@ class GuiConfig:
                                             'pipeline.\n\n'
                                             'Warning: If the result directory already exists, this will delete '
                                             'all its content!')
-        
+
         """ NGS - SETTINGS """
         d[self.key.ns_title] = GuiEntity(label='Advanced NGS Pipeline Settings',
                                          desc='Options to further customise the NGS pipeline.')
@@ -1279,16 +1278,16 @@ class Config:
 
         """ LOAD CONFIGURATION FROM FILE """
         # path to the configuration file
-        self.cfg_path = cfg_path                            # type: str
+        self.cfg_path = cfg_path                                                            # type: str
         # load the configuration file
-        self.cfg = yaml.load(open(self.cfg_path, 'r'))      # type: dict
+        self.cfg = yaml.load(open(self.cfg_path, 'r'), Loader=yaml.Loader)                  # type: dict
         # get the user, default and GUI configuration depending on the operating system
         self.user = UserConfig(self.cfg[self.os]['User'])   # type: UserConfig
         self.gui = GuiConfig(self.cfg[self.os]['GUI'])      # type: GuiConfig
         self.run = RunConfig(self.cfg['Run']['User'])       # type: RunConfig
-        
+
         """ LOGS """
-        self.a_log = ALog()                 # type: AnalysisLog
+        self.a_log = ALog()                 # type: ALog
         self.n_log = None                   # type: NGSLog
 
         """ CONSTANTS """
@@ -1314,7 +1313,7 @@ class Config:
         self.misc = Misc                    # type: Misc
         # genes of interest categories
         self.cat = set()                    # type: set
-        
+
     def _get_os(self):
         """
         Determines the operating system running the program.
@@ -1331,7 +1330,7 @@ class Config:
         else:
             self.os_supported = False
             return ''
-        
+
     def update_output(self, a_out_dir, n_out_dir):
         """
         Updates the analysis output paths.
@@ -1339,7 +1338,7 @@ class Config:
         :param n_out_dir: new NGS output directory
         """
         self.op = OutputPaths(a_out_dir, n_out_dir)
-    
+
     def restore_default(self):
         """
         Restores the default settings.
@@ -1362,7 +1361,7 @@ class Config:
             dumper = yaml.SafeDumper
             dumper.ignore_aliases = lambda dump, data: True
             cfg_file.write(yaml.dump(self.cfg, default_flow_style=False, Dumper=dumper))
-    
+
     def save_config(self):
         """
         Saves the current settings to the configuration file.

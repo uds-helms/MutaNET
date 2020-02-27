@@ -1,6 +1,11 @@
-# Byte-compiled / optimized / DLL files
+# Development files
+*.fastq
 results/
 .idea
+pyinstaller.bat
+.spec
+
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
