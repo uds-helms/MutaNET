@@ -1,10 +1,10 @@
 # import standard or third party modules
+import fpdf
 import math
 import os.path as op
 from datetime import datetime
 from itertools import chain
 
-import fpdf
 # set up matplotlib
 import matplotlib
 import matplotlib as mpl

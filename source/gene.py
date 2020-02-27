@@ -1,10 +1,9 @@
 # import standard or third party modules
 from collections import defaultdict
 
-from source.tools import parse_strand, is_dna_sequence, is_protein_sequence, parse_regulation, combine_reg_info
-
 # import own modules
 from source.configuration import cfg
+from source.tools import parse_strand, is_dna_sequence, is_protein_sequence, parse_regulation, combine_reg_info
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'

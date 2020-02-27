@@ -1,7 +1,7 @@
 # import standard or third party modules
 import numpy as np
-from source.plots import BarPlot, CodingPlot, TfbsPlot, MdPlot, Result
 from scipy.stats import ranksums
+from source.plots import BarPlot, CodingPlot, TfbsPlot, MdPlot, Result
 
 # import own modules
 from source.configuration import cfg

@@ -2,21 +2,20 @@
 import os
 import re
 import sqlite3
-from collections import defaultdict
 from copy import deepcopy
 from csv import DictReader
 from itertools import islice
-from random import randint, choice
-from tkinter import messagebox
 from typing import List, Set
-
-from source.configuration import cfg, gui
-from source.mutation import Mutation
-from source.tools import complement_strand, translate, SubstitutionMatrix, Pwm, Edge, tsv_start, check_tsv_fieldnames, \
-    is_dna_sequence
+from tkinter import messagebox
+from random import randint, choice
+from collections import defaultdict
 
 # import own modules
 from source.gene import Gene
+from source.mutation import Mutation
+from source.configuration import cfg, gui
+from source.tools import complement_strand, translate, SubstitutionMatrix, Pwm, Edge, tsv_start, check_tsv_fieldnames, \
+    is_dna_sequence
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'

@@ -1,16 +1,15 @@
 # import standard or third party modules
 import re
-from collections import defaultdict
-from csv import DictReader
-from os import walk, path
 from time import time
+from os import walk, path
+from csv import DictReader
 from tkinter import messagebox
-
-from source.tools import tsv_start, is_dna_sequence, get_file_name, check_tsv_fieldnames, translate, parse_regulation, \
-    parse_strand
+from collections import defaultdict
 
 # import own modules
 from source.configuration import adjust_file_path, adjust_dir_path, cfg
+from source.tools import tsv_start, is_dna_sequence, get_file_name, check_tsv_fieldnames, translate, parse_regulation, \
+    parse_strand
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'

@@ -2,9 +2,8 @@
 from collections import defaultdict
 
 # import own modules
-from source.tools import is_dna_sequence
-
 from source.configuration import cfg
+from source.tools import is_dna_sequence
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'

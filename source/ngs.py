@@ -1,17 +1,16 @@
 # import standard or third party modules
 import os
 import shutil
+from time import time
+from shlex import quote
 import subprocess as sp
 from collections import defaultdict
-from shlex import quote
-from time import time
 
-from source.converter import MutationVcfMerger
 # import own modules
 from source.log import NGSLog
-from source.tools import get_file_name, setup_directory, clean_directory
-
+from source.converter import MutationVcfMerger
 from source.configuration import cfg, adjust_dir_path, adjust_file_path
+from source.tools import get_file_name, setup_directory, clean_directory
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'

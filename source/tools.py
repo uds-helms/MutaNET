@@ -1,8 +1,8 @@
 # import standard or third party modules
 import os
-from itertools import filterfalse
 from math import log
 from tkinter import messagebox
+from itertools import filterfalse
 
 # import own modules
 from source.configuration import cfg, adjust_dir_path

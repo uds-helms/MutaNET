@@ -1,22 +1,21 @@
 # import standard or third party modules
 import os
 import re
-import tkinter as tk
 import traceback
+import tkinter as tk
+from time import time
 from shutil import which
 from subprocess import Popen
-from time import time
 from tkinter import ttk, filedialog, messagebox, font
 
+# import own modules
+from source.log import ALog
+from source.stats import Stats
+from source.ngs import NGSPipeline
+from source.database import Database
+from source.tools import check_dir, setup_directory, clean_directory
 from source.configuration import cfg, gui, adjust_dir_path, adjust_file_path, find_exe
 from source.converter import MutationVcfMerger, UniProtConverter, PatricConverter, RegulonDBConverter
-from source.database import Database
-from source.log import ALog
-# import own modules
-from source.stats import Stats
-from source.tools import check_dir, setup_directory, clean_directory
-
-from source.ngs import NGSPipeline
 
 __author__ = 'Markus Hollander'
 __copyright__ = 'Copyright (C) 2017 Markus Hollander'
