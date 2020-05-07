@@ -1,5 +1,4 @@
 # MutaNET
-## Introduction
 Mutations in genomic key elements can influence gene expression and function in various ways, and hence greatly contribute to the phenotype. MutaNET comes with a next generation sequencing (NGS) pipeline that calls mutations based on paired-end NGS reads, an automated analysis tool and various file converters and mergers. The mutation analysis feature considers the coding region, protein domains, regulation and transcription factor binding site information, and can be used to analyse the potential impact of mutations on genes of interest.
 
 MutaNET was developed and implemented in 2017 and published in 2018:
