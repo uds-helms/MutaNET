@@ -443,7 +443,7 @@ class GeneDB:
     md_syn = 'synonymous_mutations_per_kbp'             # type: str
     md_prom = 'promoter_mutations_per_kbp'              # type: str
     md_tfbs = 'tfbs_mutations_per_kbp'                  # type: str
-    pd_type = 'prot_dom_tyoe'                           # type: str
+    pd_type = 'prot_dom_type'                           # type: str
     pd_desc = 'prot_dom_desc'                           # type: str
     pd_start = 'prot_dom_start'                         # type: str
     pd_end = 'prot_dom_end'                             # type: str

@@ -1,83 +1,78 @@
-ID   FMT_STAA8               Reviewed;         311 AA.
-AC   Q2FZ68;
-DT   15-JAN-2008, integrated into UniProtKB/Swiss-Prot.
+ID   Q2FXK2_STAA8            Unreviewed;       386 AA.
+AC   Q2FXK2;
+DT   21-MAR-2006, integrated into UniProtKB/TrEMBL.
 DT   21-MAR-2006, sequence version 1.
-DT   15-MAR-2017, entry version 72.
-DE   RecName: Full=Methionyl-tRNA formyltransferase {ECO:0000255|HAMAP-Rule:MF_00182};
-DE            EC=2.1.2.9 {ECO:0000255|HAMAP-Rule:MF_00182};
-GN   Name=fmt {ECO:0000255|HAMAP-Rule:MF_00182};
-GN   OrderedLocusNames=SAOUHSC_01183;
-OS   Staphylococcus aureus (strain NCTC 8325).
+DT   07-OCT-2020, entry version 87.
+DE   RecName: Full=Aminotran_5 domain-containing protein {ECO:0000259|Pfam:PF00266};
+GN   OrderedLocusNames=SAOUHSC_01832 {ECO:0000313|EMBL:ABD30900.1};
+OS   Staphylococcus aureus (strain NCTC 8325 / PS 47).
 OC   Bacteria; Firmicutes; Bacilli; Bacillales; Staphylococcaceae;
 OC   Staphylococcus.
-OX   NCBI_TaxID=93061;
-RN   [1]
+OX   NCBI_TaxID=93061 {ECO:0000313|EMBL:ABD30900.1, ECO:0000313|Proteomes:UP000008816};
+RN   [1] {ECO:0000313|Proteomes:UP000008816}
 RP   NUCLEOTIDE SEQUENCE [LARGE SCALE GENOMIC DNA].
-RC   STRAIN=NCTC 8325;
-RA   Gillaspy A.F., Worrell V., Orvis J., Roe B.A., Dyer D.W.,
-RA   Iandolo J.J.;
+RC   STRAIN=NCTC 8325 / PS 47 {ECO:0000313|Proteomes:UP000008816};
+RA   Gillaspy A.F., Worrell V., Orvis J., Roe B.A., Dyer D.W., Iandolo J.J.;
 RT   "The Staphylococcus aureus NCTC 8325 genome.";
 RL   (In) Fischetti V., Novick R., Ferretti J., Portnoy D., Rood J. (eds.);
-RL   Gram positive pathogens, 2nd edition, pp.381-412, ASM Press,
-RL   Washington D.C. (2006).
-CC   -!- FUNCTION: Modifies the free amino group of the aminoacyl moiety of
-CC       methionyl-tRNA(fMet). The formyl group appears to play a dual role
-CC       in the initiator identity of N-formylmethionyl-tRNA by: (I)
-CC       promoting its recognition by IF2 and (II) impairing its binding to
-CC       EFTu-GTP. {ECO:0000255|HAMAP-Rule:MF_00182}.
-CC   -!- CATALYTIC ACTIVITY: 10-formyltetrahydrofolate + L-methionyl-
-CC       tRNA(fMet) = tetrahydrofolate + N-formylmethionyl-tRNA(fMet).
-CC       {ECO:0000255|HAMAP-Rule:MF_00182}.
-CC   -!- SIMILARITY: Belongs to the Fmt family. {ECO:0000255|HAMAP-
-CC       Rule:MF_00182}.
-CC   -----------------------------------------------------------------------
-CC   Copyrighted by the UniProt Consortium, see http://www.uniprot.org/terms
-CC   Distributed under the Creative Commons Attribution-NoDerivs License
-CC   -----------------------------------------------------------------------
-DR   EMBL; CP000253; ABD30290.1; -; Genomic_DNA.
-DR   RefSeq; WP_000161299.1; NC_007795.1.
-DR   RefSeq; YP_499722.1; NC_007795.1.
-DR   ProteinModelPortal; Q2FZ68; -.
-DR   SMR; Q2FZ68; -.
-DR   STRING; 93061.SAOUHSC_01183; -.
-DR   EnsemblBacteria; ABD30290; ABD30290; SAOUHSC_01183.
-DR   GeneID; 28381227; -.
-DR   GeneID; 3919316; -.
-DR   KEGG; sao:SAOUHSC_01183; -.
-DR   PATRIC; 19579855; VBIStaAur99865_1086.
-DR   eggNOG; ENOG4105CAE; Bacteria.
-DR   eggNOG; COG0223; LUCA.
-DR   HOGENOM; HOG000261177; -.
-DR   KO; K00604; -.
-DR   OMA; GCINSHA; -.
+RL   Gram positive pathogens, 2nd edition, pp.381-412, ASM Press, Washington D.C
+RL   (2006).
+CC   -!- COFACTOR:
+CC       Name=pyridoxal 5'-phosphate; Xref=ChEBI:CHEBI:597326;
+CC         Evidence={ECO:0000256|ARBA:ARBA00001933,
+CC         ECO:0000256|PIRSR:PIRSR000524-50, ECO:0000256|RuleBase:RU004504};
+CC   -!- SIMILARITY: Belongs to the class-V pyridoxal-phosphate-dependent
+CC       aminotransferase family. {ECO:0000256|ARBA:ARBA00009236,
+CC       ECO:0000256|RuleBase:RU004075}.
+CC   ---------------------------------------------------------------------------
+CC   Copyrighted by the UniProt Consortium, see https://www.uniprot.org/terms
+CC   Distributed under the Creative Commons Attribution (CC BY 4.0) License
+CC   ---------------------------------------------------------------------------
+DR   EMBL; CP000253; ABD30900.1; -; Genomic_DNA.
+DR   RefSeq; WP_000291415.1; NZ_LS483365.1.
+DR   RefSeq; YP_500338.1; NC_007795.1.
+DR   SMR; Q2FXK2; -.
+DR   STRING; 1280.SAXN108_1751; -.
+DR   EnsemblBacteria; ABD30900; ABD30900; SAOUHSC_01832.
+DR   GeneID; 3921782; -.
+DR   GeneID; 45574931; -.
+DR   KEGG; sao:SAOUHSC_01832; -.
+DR   PATRIC; fig|93061.5.peg.1671; -.
+DR   eggNOG; COG0075; Bacteria.
+DR   HOGENOM; CLU_027686_1_1_9; -.
+DR   OMA; GQTHSTP; -.
 DR   Proteomes; UP000008816; Chromosome.
-DR   GO; GO:0004479; F:methionyl-tRNA formyltransferase activity; IEA:UniProtKB-EC.
-DR   Gene3D; 3.10.25.10; -; 1.
-DR   Gene3D; 3.40.50.170; -; 1.
-DR   HAMAP; MF_00182; Formyl_trans; 1.
-DR   InterPro; IPR005794; Fmt.
-DR   InterPro; IPR005793; Formyl_trans_C.
-DR   InterPro; IPR002376; Formyl_transf_N.
-DR   InterPro; IPR011034; Formyl_transferase_C-like.
-DR   InterPro; IPR001555; GART_AS.
-DR   Pfam; PF02911; Formyl_trans_C; 1.
-DR   Pfam; PF00551; Formyl_trans_N; 1.
-DR   SUPFAM; SSF50486; SSF50486; 1.
-DR   SUPFAM; SSF53328; SSF53328; 1.
-DR   TIGRFAMs; TIGR00460; fmt; 1.
-DR   PROSITE; PS00373; GART; 1.
+DR   GO; GO:0005777; C:peroxisome; IBA:GO_Central.
+DR   GO; GO:0008453; F:alanine-glyoxylate transaminase activity; IBA:GO_Central.
+DR   GO; GO:0004760; F:serine-pyruvate transaminase activity; IBA:GO_Central.
+DR   GO; GO:0019265; P:glycine biosynthetic process, by transamination of glyoxylate; IBA:GO_Central.
+DR   Gene3D; 3.40.640.10; -; 1.
+DR   Gene3D; 3.90.1150.10; -; 1.
+DR   InterPro; IPR000192; Aminotrans_V_dom.
+DR   InterPro; IPR020578; Aminotrans_V_PyrdxlP_BS.
+DR   InterPro; IPR015424; PyrdxlP-dep_Trfase.
+DR   InterPro; IPR015422; PyrdxlP-dep_Trfase_dom1.
+DR   InterPro; IPR015421; PyrdxlP-dep_Trfase_major.
+DR   InterPro; IPR024169; SP_NH2Trfase/AEP_transaminase.
+DR   Pfam; PF00266; Aminotran_5; 1.
+DR   PIRSF; PIRSF000524; SPT; 1.
+DR   SUPFAM; SSF53383; SSF53383; 1.
+DR   PROSITE; PS00595; AA_TRANSFER_CLASS_5; 1.
 PE   3: Inferred from homology;
-KW   Complete proteome; Protein biosynthesis; Reference proteome;
-KW   Transferase.
-FT   CHAIN         1    311       Methionyl-tRNA formyltransferase.
-FT                                /FTId=PRO_1000020173.
-FT   REGION      109    112       Tetrahydrofolate (THF) binding.
-FT                                {ECO:0000255|HAMAP-Rule:MF_00182}.
-SQ   SEQUENCE   311 AA;  34211 MW;  FC45A768EA61D5CA CRC64;
-     MTKIIFMGTP DFSTTVLEML IAEHDVIAVV TQPDRPVGRK RVMTPPPVKK VAMKYDLPVY
-     QPEKLSGSEE LEQLLQLDVD LIVTAAFGQL LPESLLALPN LGAINVHASL LPKYRGGAPI
-     HQAIIDGEQE TGITIMYMVK KLDAGNIISQ QAIKIEENDN VGTMHDKLSV LGADLLKETL
-     PSIIEGTNES VPQDDTQATF ASNIRREDER ISWNKPGRQV FNQIRGLSPW PVAYTTMDDT
-     NLKIYDAELV ETNKINEPGT IIETTKKAII VATNDNEAVA IKDMQLAGKK RMLAANYLSG
-     AQNTLVGKKL I
+KW   Pyridoxal phosphate {ECO:0000256|PIRSR:PIRSR000524-50};
+KW   Reference proteome {ECO:0000313|Proteomes:UP000008816}.
+FT   DOMAIN          8..333
+FT                   /note="Aminotran_5"
+FT                   /evidence="ECO:0000259|Pfam:PF00266"
+FT   MOD_RES         195
+FT                   /note="N6-(pyridoxal phosphate)lysine"
+FT                   /evidence="ECO:0000256|PIRSR:PIRSR000524-50"
+SQ   SEQUENCE   386 AA;  42850 MW;  567080407ACD0927 CRC64;
+     MYYHQPLLLT PGPTPVPDAI MREIQAPMVG HRSKDFEDIA QQAFQGLKPI FGSQNDVLIL
+     TSSGTSVLEA SMLNIVNPED HFVVIVSGAF GNRFKQIAQT YYKNVHIYDV TWGEAVDVKD
+     FINFLSTLNV EVKAVFSQYC ETSTTVLHPI HELGNAINQF NSNIYFVVDG VSCIGAVDVD
+     INKDKIDVLV SGSQKAIMLP PGLAFVAYSH RAKEHFKEVT TPKFYLDLNK YISSQADNST
+     PFTPNVSLFR GVNAYVETVK AEGFNHVIAR HYAIRNALRS ALKALDLTLL VNDKDASPTV
+     TAFKPNTNDE VKIIKDELKN RFKITIAGGQ GHLKGQILRI GHMGKISPFD ILSVVSALEI
+     ILTEHRKVNY IGKGISKYME VIHEAI
 //

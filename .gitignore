@@ -1,6 +1,7 @@
 # Development files
 *.fastq
 results/
+user_projects/
 .idea
 pyinstaller.bat
 .spec

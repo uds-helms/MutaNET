@@ -1,4 +1,5 @@
 # MutaNET
+## Introduction
 Mutations in genomic key elements can influence gene expression and function in various ways, and hence greatly contribute to the phenotype. MutaNET comes with a next generation sequencing (NGS) pipeline that calls mutations based on paired-end NGS reads, an automated analysis tool and various file converters and mergers. The mutation analysis feature considers the coding region, protein domains, regulation and transcription factor binding site information, and can be used to analyse the potential impact of mutations on genes of interest.
 
 MutaNET was developed and implemented in 2017 and published in 2018:
@@ -29,7 +30,7 @@ When starting MutaNET for the first time, the file paths for small example data 
 **NGS Pipeline:** You need to extract `S11_R1.fastq` and `S11_R2.fastq` from `S11_R1.zip` and `S11_R2.zip` in `example_data/NGS/reads` before running the NGS pipeline with the example data.
 
 ## Change Log
-### Version 1.1.0
+### Version 2.0
 - added support for eukaryotes
 - fixed file encoding issues
 - fixed minor frame shift bug

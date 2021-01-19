@@ -19,11 +19,11 @@ then
 	fi
 	brew cask install java
 	echo
-	brew install homebrew/science/bwa
+	brew install bwa
 	echo
-	brew install homebrew/science/samtools
+	brew install samtools
 	echo
-	brew install homebrew/science/varscan
+	brew install brewsci/bio/varscan
 	echo
 fi
 

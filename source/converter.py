@@ -303,82 +303,54 @@ class UniProtEntry:
                 for name in names:
                     self.names.add(('', name.strip()))
 
-    def process_domain(self, t, s, e, ds):
+    def process_domain(self, t, loc, ds):
         """
         Processes the information of a single protein domain.
         :param t: domain type
-        :param s: start
-        :param e: end
+        :param loc: location
         :param ds: list of description lines
         """
-        # don't add the domain if start, end or type are not given
-        if not t or not s or not e:
+        # don't add the domain if location or type are not given
+        if not t or not loc:
             return
+
+        # extract start and end position from the location
+        loc = loc.split('..')
+        if len(loc) == 2:
+            s, e = loc
+        # sometimes there is only the start position
+        elif len(loc) == 1:
+            s = loc[0]
+            e = s
+        else:
+            return
+
         # don't add the domain if start or end are not numbers
         if not s.isdigit() or not e.isdigit():
             return
 
-        # a single description lines can contain several descriptions that end with '.'
+        # a single description lines can contain several descriptions as follows: /<qualifier>="<value>"
         # this creates an adjusted list where each element is a single description
         ds_adjusted = []
         for d in ds:
-            words = d.split('. ')
-
-            words2 = []
-            # add '.' back to the description that was removed when splitting the line
-            # (except for the last one, since a description can continue on the next line)
-            for w in words[:-1]:
-                if not w.endswith('.'):
-                    words2.append(w + '.')
-                else:
-                    words2.append(w)
-            words2.append(words[-1])
-
-            # fix some inconsistent formatting in the feature descriptions
-            words = [words2[0]]
-            for i in range(1, len(words2)):
-                try:
-                    if words[i - 1][-4:] == 'Ref.':
-                        words[i - 1] += ' ' + words2[i]
-                    else:
-                        words.append(words2[i])
-                except IndexError:
-                    words.append(words2[i])
-
-            ds_adjusted += words
-
-        # final list of domain descriptions
-        desc = []           # type: list(str)
-        # true of the description continues on the next line
-        cont_desc = False
-
-        for d in ds_adjusted:
-            # ignore the feature ID
-            if d.startswith('/FTId'):
-                continue
-
-            # a description ends with '.'
-            cont = not d.endswith('.')
-            d = d.strip('.').replace(';', ',')
-
-            # ignore empty descriptions
             if not d:
                 continue
+            if '="' in d:
+                ds_adjusted.append(d.split('="')[1].strip('"'))
+            elif d:
+                ds_adjusted[-1] += ' ' + d.strip('"')
 
-            # sequence that continues on the next line
-            if cont_desc and desc[-1][-1].isupper() and d[0].isupper():
-                desc[-1] += d
-            # description that continues on the next line and needs a space in between
-            elif cont_desc:
-                desc[-1] += ' ' + d
-            # new description
-            else:
+        # final list of domain descriptions
+        desc = []
+
+        for d in ds_adjusted:
+            # ignore empty descriptions
+            d = d.strip().replace('|', '-')
+            if d:
                 desc.append(d)
 
-            cont_desc = cont
-
         # add the protein domain
-        self.domains.add((s, e, t, cfg.misc.in_sep.join(desc)))
+        self.domains.add((s, e, t.lower(), cfg.misc.in_sep.join(desc)))
 
     def parse_ft(self):
         """
@@ -388,33 +360,28 @@ class UniProtEntry:
         if not self.ft:
             return
 
-        type = ''
-        start = ''
-        end = ''
+        domain_type = ''
+        location = ''
         desc = []
 
         for line in self.ft:
             # parse the columns
-            ttype = line[5:13].strip()
-            tstart = line[14:20].strip().strip('>').strip('<')
-            tend = line[21:27].strip().strip('>').strip('<')
-            tdesc = line[34:].strip()
+            t_type = line[5:21].strip()
 
             # new feature
-            if ttype:
+            if t_type:
                 # add the previous feature to the domain list
-                self.process_domain(type, start, end, desc)
+                self.process_domain(domain_type, location, desc)
                 # set the type, start and end of the new feature
-                type = ttype
-                start = tstart
-                end = tend
-                desc = [tdesc]
+                domain_type = t_type
+                location = line[21:].strip('?<>').strip()
+                desc = []
             # previous feature is continued
             else:
-                desc.append(tdesc)
+                desc.append(line[21:].strip())
 
         # add the last feature to the domain list
-        self.process_domain(type, start, end, desc)
+        self.process_domain(domain_type, location, desc)
 
     def validate(self):
         """
@@ -582,7 +549,7 @@ class PatricConverter(Parser):
             file = open(self.out_path, 'w')
 
             # write the header
-            file.write('\t'.join([cfg.res.lt, cfg.res.name, cfg.res.desc]) + '\n')
+            file.write('\t'.join([cfg.int.lt, cfg.int.name, cfg.int.desc]) + '\n')
 
             # sort the genes by locus tag
             for key, val in sorted(self.entries.items(), key=lambda x: x[0]):
