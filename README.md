@@ -31,7 +31,7 @@ When starting MutaNET for the first time, the file paths for small example data 
 
 ## Change Log
 ### Version 1.1.1
-- updates installation instructions and installation script of SAMTools, VarScan and BWA for MacOS
+- updated installation instructions and installation script of SAMTools, VarScan and BWA for MacOS
 - updated the UniProt converter to handle the new UniProt format
 
 ### Version 1.1.0
