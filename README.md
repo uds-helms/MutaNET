@@ -30,11 +30,11 @@ When starting MutaNET for the first time, the file paths for small example data 
 **NGS Pipeline:** You need to extract `S11_R1.fastq` and `S11_R2.fastq` from `S11_R1.zip` and `S11_R2.zip` in `example_data/NGS/reads` before running the NGS pipeline with the example data.
 
 ## Change Log
-### Version 2.1
+### Version 1.1.1
 - updates installation instructions and installation script of SAMTools, VarScan and BWA for MacOS
 - updated the UniProt converter to handle the new UniProt format
 
-### Version 2.0
+### Version 1.1.0
 - added support for eukaryotes
 - fixed file encoding issues
 - fixed minor frame shift bug
