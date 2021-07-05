@@ -1,4 +1,4 @@
-gene1	gene2	-	Weak	
-gene1	gene3	+-	Strong	
-gene1	gene4	+	Confirmed	
-gene5	gene6	?	Weak	
+identifier1	gene1	identifier2	gene2	-	[evidence_source]	Weak
+identifier1	gene1	identifier3	gene3	+-	[evidence_source]	Strong
+identifier1	gene1	identifier4	gene4	+	[evidence_source]	Confirmed
+identifier5	gene5	identifier6	gene6	?	[evidence_source]	Weak

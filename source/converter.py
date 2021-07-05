@@ -1509,7 +1509,7 @@ class RegulonDBConverter:
 
         for line in lines:
             # obtain the columns
-            cols = line.split('\t')
+            cols = line.strip().split('\t')
 
             # skip incomplete lines
             if len(cols) < 8:
@@ -1535,7 +1535,7 @@ class RegulonDBConverter:
 
         for line in lines:
             # obtain the columns
-            cols = line.split('\t')
+            cols = line.strip().split('\t')
 
             # skip incomplete lines
             if len(cols) < 7:
@@ -1546,7 +1546,7 @@ class RegulonDBConverter:
                 continue
 
             # try to add the TU
-            if self.index.add_tu(tu_id=cols[1].strip(), genes=cols[3].strip().split(',')):
+            if self.index.add_tu(tu_id=cols[1].strip(), genes=cols[3].strip().replace('"', '').split(',')):
                 success = True
 
         return success
@@ -1561,18 +1561,24 @@ class RegulonDBConverter:
 
         for line in lines:
             # obtain the columns
-            words = line.split('\t')
+            cols = line.strip().split('\t')
 
             # skip incomplete lines
-            if len(words) < 5:
+            if len(cols) not in [5, 7]:
                 continue
 
+            # the TF-TF file has 5 columns and the TF-gene file has 7 columns
+            tf = 1 if len(cols) == 7 else 0
+            gn = 3 if len(cols) == 7 else 1
+            reg = 4 if len(cols) == 7 else 2
+            evidence = 6 if len(cols) == 7 else 4
+
             # skip entries with insufficient evidence
-            if self.skip and words[4].strip() in ['null', 'Weak', '']:
+            if self.skip and cols[evidence].strip() in ['null', 'Weak', '']:
                 continue
 
             # try to add the regulatory information
-            if self.index.add_gene_reg(tf=words[0].strip(), gn=words[1].strip(), reg=words[2].strip()):
+            if self.index.add_gene_reg(tf=cols[tf].strip(), gn=cols[gn].strip(), reg=cols[reg].strip()):
                 success = True
 
         return success
@@ -1587,20 +1593,20 @@ class RegulonDBConverter:
 
         for line in lines:
             # obtain the columns
-            words = line.split('\t')
+            cols = line.strip().split('\t')
 
             # skip incomplete lines
-            if len(words) < 5:
+            if len(cols) < 5:
                 continue
 
             # skip entries with insufficient evidence
-            if self.skip and words[4].strip() in ['null', 'Weak', '']:
+            if self.skip and cols[4].strip() in ['null', 'Weak', '']:
                 continue
 
-            tu = re.sub(r'[[].*?[]]', '', words[1].strip())
+            tu = re.sub(r'[[].*?[]]', '', cols[1].strip())
 
             # try to add the TU regulation
-            if self.index.add_tu_reg(tf=words[0].strip(), tu_id=tu, reg=words[2].strip()):
+            if self.index.add_tu_reg(tf=cols[0].strip(), tu_id=tu, reg=cols[2].strip()):
                 success = True
 
         return success
@@ -1615,7 +1621,7 @@ class RegulonDBConverter:
 
         for line in lines:
             # obtain the columns
-            words = line.split('\t')
+            words = line.strip().split('\t')
 
             # skip incomplete lines
             if len(words) < 5:
@@ -1651,33 +1657,33 @@ class RegulonDBConverter:
 
         for line in lines:
             # get the columns
-            cols = line.split('\t')
+            cols = line.strip().split('\t')
             # skip incomplete entries
-            if len(cols) < 14:
+            if len(cols) < 17:
                 continue
 
             # skip insufficient evidence
-            if self.skip and cols[13].strip() in ['null', 'Weak', '']:
+            if self.skip and cols[16].strip() in ['null', 'Weak', '']:
                 continue
 
             # check if the start and end positions are integers
             try:
-                start = int(cols[3].strip())
-                end = int(cols[4].strip())
+                start = int(cols[4].strip())
+                end = int(cols[5].strip())
             except ValueError:
                 continue
 
             # process the strand
-            if cols[5].strip().lower() in cfg.isup.str_minus:
+            if cols[6].strip().lower() in cfg.isup.str_minus:
                 strand = cfg.misc.minus
             else:
                 strand = cfg.misc.plus
 
             # process the DNA
-            dna = ''.join([c for c in cols[11].strip() if c.isupper() and is_dna_sequence(c)])
+            dna = ''.join([c for c in cols[13].strip() if c.isupper() and is_dna_sequence(c)])
 
             # try to add the TFBS
-            if self.index.add_tfbs(tf=cols[1].strip(), tu_id=cols[7].strip(), prom_id=cols[9].strip(), start=start,
+            if self.index.add_tfbs(tf=cols[1].strip(), tu_id=cols[9].strip(), prom_id=cols[11].strip(), start=start,
                                    end=end, strand=strand, dna=dna):
                 success = True
 

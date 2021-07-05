@@ -1,2 +1,2 @@
-identifier1	translation_unit1	operon_name1	gene1,gene2,gene3	promoter1	evidence1	Weak
-identifier2	translation_unit2	operon_name2	gene4,gene5	promoter2	evidence2	Strong
+identifier1	transcription_unit1	operon_name1	"gene1,gene2,gene3"	promoter1	evidence1	Weak
+identifier2	transcription_unit2	operon_name2	"gene4,gene5"	promoter2	evidence2	Strong
