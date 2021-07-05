@@ -10,11 +10,7 @@ Descriptions, explanations and examples of functionality and data sources can be
 
 ## Quickstart
 ### Starting MutaNET
-MutaNET comes as Python 3 source code as well as an executable for Windows.
-
-**Executable (Windows):** To start MutaNET, double–click on the executable `mutaNET32.exe` or `mutaNET64.exe`, depending on whether you have a 32–bit or 64–bit Windows installation. If you are not sure, choose the 32–bit executable. Make sure that the executable remains in the same directory as the config.yaml file. Otherwise the user interface will not start.
-
-**From Source:** Open a command prompt or terminal and execute the following command:
+MutaNET comes as Python 3 source code. Open a command prompt or terminal and execute the following command:
 ```
 python3 source_folder_path/mutaNET.py
 ```
@@ -30,6 +26,10 @@ When starting MutaNET for the first time, the file paths for small example data 
 **NGS Pipeline:** You need to extract `S11_R1.fastq` and `S11_R2.fastq` from `S11_R1.zip` and `S11_R2.zip` in `example_data/NGS/reads` before running the NGS pipeline with the example data.
 
 ## Change Log
+### Version 1.1.2
+- updated the file converter to account for changes made to RegulonDB
+- removed the pre-compiled executables for Windows due to incompatible changes made to PyInstaller
+
 ### Version 1.1.1
 - updated installation instructions and installation script of SAMTools, VarScan and BWA for MacOS
 - updated the UniProt converter to handle the new UniProt format
